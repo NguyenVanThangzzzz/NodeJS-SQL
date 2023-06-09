@@ -14,8 +14,8 @@
 
     <div class="topnav">
         <a href="/">Home</a>
-        <a href="/">Upload file</a>
-        <a href="/user">Create User</a>
+
+        <a href="/employees" class="active">Create Employee</a>
 
     </div>
 
@@ -76,7 +76,7 @@
             </table>
         </div>
         <div class="create-user-container">
-            <form action="/create-new-user" method="POST">
+            <form action="/create-new-user" method="POST" enctype="multipart/form-data">
                 <div><b>Create a new user:</b></div>
                 <div>
                     <label>First Name:</label>
