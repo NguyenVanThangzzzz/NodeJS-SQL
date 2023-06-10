@@ -169,3 +169,10 @@ hr {
     /* Số dòng tối đa hiển thị */
     -webkit-box-orient: vertical;
 }
+
+.card-title {
+    min-height: 50px;
+    /* Điều chỉnh chiều cao cố định theo nhu cầu */
+    display: flex;
+    align-items: center;
+}
