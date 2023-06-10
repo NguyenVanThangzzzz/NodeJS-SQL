@@ -67,13 +67,105 @@ body {
 hr {
     border-top: 3px solid #eee !important;
 }
-.card{
+
+.card {
     margin-top: 20px;
     margin-left: 20px;
 }
+
 .fixed-image {
-    width: 200px; /* Đặt chiều rộng mong muốn */
-    height: 200px; /* Đặt chiều cao mong muốn */
-    object-fit: cover; /* Đảm bảo hình ảnh không bị méo hoặc biến dạng */
-  }
-  
+    width: 200px;
+    /* Đặt chiều rộng mong muốn */
+    height: 200px;
+    /* Đặt chiều cao mong muốn */
+    object-fit: cover;
+    /* Đảm bảo hình ảnh không bị méo hoặc biến dạng */
+}
+
+.create-user-container {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+}
+
+.create-user-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.create-user-container div {
+    margin-bottom: 15px;
+}
+
+.create-user-container label {
+    font-weight: bold;
+}
+
+.create-user-container input[type="text"],
+.create-user-container input[type="file"] {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    width: 100%;
+}
+
+.create-user-container button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    background-color: #4caf50;
+    cursor: pointer;
+}
+
+.create-user-container button.btn-submit {
+    margin-right: 10px;
+}
+
+.create-user-container button.btn-submit:hover {
+    background-color: #45a049;
+}
+
+.create-user-container button.btn-submit:active {
+    background-color: #3e8e41;
+}
+
+
+
+.nav.nav-pills.card-header-pills {
+    height: 40px;
+    display: flex;
+    margin: 7px
+}
+
+.nav-item.ml-auto {
+    margin-right: 80px;
+}
+
+.nav-link.active {
+    padding: 7px 14px;
+}
+
+.card {
+    border-radius: 10px;
+    height: 400px;
+}
+
+.card-body {
+    color: white;
+    max-height: 200px;
+    /* Giới hạn chiều cao của phần tử card-body */
+    overflow: hidden;
+    /* Ẩn nội dung vượt quá kích thước giới hạn */
+}
+
+.card-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    /* Số dòng tối đa hiển thị */
+    -webkit-box-orient: vertical;
+}
