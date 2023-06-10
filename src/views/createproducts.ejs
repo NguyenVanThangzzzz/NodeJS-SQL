@@ -1,0 +1,35 @@
+
+<div class="create-user-container">
+    <form action="/create-new-product" method="POST" enctype="multipart/form-data">
+        <div><b>Create a new product</b></div>
+        <div>
+            <label>Product Name</label>
+            <input type="text" name="name" required />
+        </div>
+        <div>
+            <label>Product Infomation</label>
+            <input type="text" name="infomation" required />
+        </div>
+        <div>
+            <label>Product Price</label>
+            <input type="text" name="price" required />
+        </div>
+       
+        <div>
+            <label>IMG:</label>
+            <input type="file" name="image" required />
+        </div>
+        <div>
+            <button type="submit" class="btn-submit">Submit</button>
+        </div>
+        <div>
+            <button type="button" class="btn-submit" onclick="goBack()">Back</button>
+        </div>
+    </form>
+</div>
+
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
