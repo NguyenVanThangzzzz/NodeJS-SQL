@@ -80,6 +80,8 @@ hr {
     /* Đặt chiều cao mong muốn */
     object-fit: cover;
     /* Đảm bảo hình ảnh không bị méo hoặc biến dạng */
+    max-height: 300px;
+
 }
 
 .create-user-container {

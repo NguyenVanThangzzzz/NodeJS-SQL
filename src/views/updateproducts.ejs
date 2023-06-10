@@ -12,34 +12,43 @@
 
 </head>
 
-<body>
-    <div class=" imgProduct">
-        <div class="update-product-container">
-            <form action="/update-product" method="POST" enctype="multipart/form-data">
-                <div>
-                    <label>Name Products:</label>
-                    <input name="name" value="<%= dataProduct.name %>" />
-                </div>
-                <div>
-                    <label>Information Products </label>
-                    <input name="infomation" value="<%= dataProduct.infomation %>" />
-                </div>
-                <div>
-                    <label>Price Products</label>
-                    <input name="price" value="<%= dataProduct.price %>" />
-                </div>
+<div class="imgProduct">
+    <div class="update-product-container">
+        <form action="/update-product" method="POST" enctype="multipart/form-data">
+            <div>
+                <label>Name Products:</label>
+                <input name="name" value="<%= dataProduct.name %>" />
+            </div>
+            <div>
+                <label>Information Products </label>
+                <input name="infomation" value="<%= dataProduct.infomation %>" />
+            </div>
+            <div>
+                <label>Price Products</label>
+                <input name="price" value="<%= dataProduct.price %>" />
+            </div>
 
-                <div>
-                    <label>IMG Products </label>
-                    <input type="file" name="image" accept="image/*" />
-                </div>
-                <input type="hidden" value="<%= dataProduct.id %>" name="id" />
-                <div>
-                    <button class="btn-save" type="submit">Save</button>
-                </div>
-            </form>
-        </div>
+            <div>
+                <label>IMG Products </label>
+                <input type="file" name="image" accept="image/*" value="<%= dataProduct.image %>" />
+            </div>
+            <input type="hidden" value="<%= dataProduct.id %>" name="id" />
+            <div class="btn-container">
+                <button class="btn-save" type="submit">Save</button>
+                <button type="button" class="btn-submit" onclick="goBack()">Back</button>
+            </div>
+        </form>
     </div>
+</div>
+
 </body>
+<script>
+    function goBack() {
+        window.history.back();
+    }
+</script>
+<script>
+
+</script>
 
 </html>
