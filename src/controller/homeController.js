@@ -5,11 +5,39 @@ var appRoot = require('app-root-path');
 
 
 let getHomepage = async (req, res) => {
-    const [rows, fields] = await pool.execute('SELECT * FROM users');
+    const [rows, fields] = await pool.execute('SELECT * FROM products');
 
-    return res.render('index.ejs', { dataUser: rows })
+    return res.render('index.ejs', { dataProduct: rows })
 
 }
+let getProductDetailPage = async (req, res) => {
+    let productId = req.params.id;
+    let [product] = await pool.execute(`select * from products where id = ?`, [productId ]);
+    return res.send(JSON.stringify(product))
+}
+let createNewProduct = async (req, res) => {
+    let { name, infomation, price } = req.body;
+    let image = req.file.filename; // Lấy tên file ảnh đã tải lên
+  
+
+    // Di chuyển file ảnh vào thư mục public/image trên máy chủ
+    fs.renameSync(req.file.path, appRoot + "/src/public/image/" + image);
+
+    // Lưu dữ liệu ảnh vào cơ sở dữ liệu
+    await pool.execute(
+        "INSERT INTO products (name, infomation, price, image) VALUES (?, ?, ?, ?)",
+        [name, infomation, price, image]
+    );
+
+    return res.redirect("/");
+};
+
+let getCreateProductPage = (req, res) => {
+    return res.render('createproducts.ejs'); // Render trang tạo sản phẩm
+  };
+
+
+/////////////////////////////////////////USERS//////////////////////////
 let getDetailPage = async (req, res) => {
     let userId = req.params.id;
     let [user] = await pool.execute(`select * from users where id = ?`, [userId]);
@@ -62,5 +90,6 @@ let getEmployeeFilePage = async (req, res) => {
 
 
 module.exports = {
-    getHomepage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser, getEmployeeFilePage
+    getHomepage, getDetailPage, createNewUser, deleteUser, getEditPage, postUpdateUser, getEmployeeFilePage,getProductDetailPage,createNewProduct,
+    getCreateProductPage
 }

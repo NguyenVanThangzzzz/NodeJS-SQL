@@ -33,12 +33,17 @@ const initWebRoute = (app) => {
 
 
     router.get('/', homeController.getHomepage);
+    router.get('/detail/product/:id', homeController.getProductDetailPage)
+    router.get('/create', homeController.getCreateProductPage);
+    router.post('/create-new-product', upload.single('image'), homeController.createNewProduct);
+
+    ////////////////////////////////////////////////////////////
     router.get('/detail/user/:id', homeController.getDetailPage)
     router.post('/create-new-user', upload.single('img'), homeController.createNewUser);
     router.post('/delete-user', homeController.deleteUser);
     router.get('/edit-user/:id', homeController.getEditPage);
     router.post('/update-user', homeController.postUpdateUser);
-    ////////////////////////////////////////////////////////////
+    
     router.get('/employees', homeController.getEmployeeFilePage);
 
 
