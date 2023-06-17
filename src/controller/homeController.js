@@ -77,9 +77,6 @@ let postUpdateProduct = async (req, res) => {
 
 
 
-
-
 module.exports = {
-    getHomepage, getProductDetailPage, createNewProduct,
-    getCreateProductPage, getAdminproduct, deleteProduct, getEditProduct, postUpdateProduct
+    getHomepage, getProductDetailPage, createNewProduct, getCreateProductPage, getAdminproduct, deleteProduct, getEditProduct, postUpdateProduct
 }

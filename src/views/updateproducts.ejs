@@ -30,7 +30,7 @@
 
             <div>
                 <label>IMG Products </label>
-                <input type="file" name="image" accept="image/*" value="<%= dataProduct.image %>" />
+                <input type="file" name="image" id="image-input" accept="image/*" value="<%= dataProduct.image %>" />
             </div>
             <input type="hidden" value="<%= dataProduct.id %>" name="id" />
             <div class="btn-container">
@@ -46,9 +46,20 @@
     function goBack() {
         window.history.back();
     }
-</script>
-<script>
+    const imageInput = document.getElementById("image-input");
+    const currentImage = "<%= dataProduct.image %>"; // Giá trị ảnh hiện tại từ server
 
+    imageInput.addEventListener("change", (event) => {
+        const selectedImage = event.target.files[0];
+        if (selectedImage) {
+            // Người dùng đã chọn tệp ảnh mới, hiển thị tên tệp lên trường input
+            imageInput.defaultValue = selectedImage.name;
+        } else {
+            // Người dùng không chọn tệp ảnh mới, giữ nguyên giá trị ảnh hiện tại
+            imageInput.defaultValue = currentImage;
+        }
+    });
 </script>
+
 
 </html>

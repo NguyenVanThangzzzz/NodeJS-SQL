@@ -152,29 +152,35 @@ hr {
 
 .card {
     border-radius: 10px;
-    height: 400px;
+    height: auto;
+    margin-bottom: 20px;
+    overflow: hidden;
+}
+
+.fixed-image {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
 }
 
 .card-body {
     color: white;
-    max-height: 200px;
-    /* Giới hạn chiều cao của phần tử card-body */
-    overflow: hidden;
-    /* Ẩn nội dung vượt quá kích thước giới hạn */
-}
-
-.card-text {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    /* Số dòng tối đa hiển thị */
-    -webkit-box-orient: vertical;
+    padding: 10px;
 }
 
 .card-title {
-    min-height: 50px;
-    /* Điều chỉnh chiều cao cố định theo nhu cầu */
-    display: flex;
-    align-items: center;
+    min-height: 60px;
+    font-size: 18px;
+    word-break: break-word;
+    white-space: nowrap;
+    /* Thêm thuộc tính white-space */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /* Thêm thuộc tính text-overflow */
+}
+
+.card-text {
+    max-height: 80px;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
